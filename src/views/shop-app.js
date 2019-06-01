@@ -9,8 +9,8 @@ import '@polymer/iron-flex-layout/iron-flex-layout.js';
 import '@polymer/iron-media-query/iron-media-query.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
-import './shop-category-data.js';
-import './shop-home.js';
+import '../shop-category-data.js';
+import '../shop-home.js';
 import { afterNextRender } from '@polymer/polymer/lib/utils/render-status.js';
 import { timeOut } from '@polymer/polymer/lib/utils/async.js';
 import { Debouncer } from '@polymer/polymer/lib/utils/debounce.js';
@@ -385,16 +385,16 @@ class ShopApp extends PolymerElement {
       let cb = this._pageLoaded.bind(this, Boolean(oldPage));
       switch (page) {
         case 'list':
-          import('./shop-list.js').then(cb);
+          import('../shop-list.js').then(cb);
           break;
         case 'detail':
-          import('./shop-detail.js').then(cb);
+          import('../shop-detail.js').then(cb);
           break;
         case 'cart':
-          import('./shop-cart.js').then(cb);
+          import('../shop-cart.js').then(cb);
           break;
         case 'checkout':
-          import('./shop-checkout.js').then(cb);
+          import('../shop-checkout.js').then(cb);
           break;
         default:
           this._pageLoaded(Boolean(oldPage));
@@ -417,7 +417,7 @@ class ShopApp extends PolymerElement {
     // load lazy resources after render and set `loadComplete` when done.
     if (!this.loadComplete) {
       afterNextRender(this, () => {
-        import('./lazy-resources.js').then(() => {
+        import('../lazy-resources.js').then(() => {
           // Register service worker if supported.
           if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js', {scope: '/'});
