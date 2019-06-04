@@ -483,7 +483,7 @@ class ShopApp extends PolymerElement {
 
     // Announce the page's title
     if (detail.title) {
-      document.title = detail.title + ' - SHOP';
+      document.title = detail.title + ' - Haven Carty Design';
       this._announce(detail.title + ', loaded');
       // Set open graph metadata
       this._setMeta('property', 'og:title', detail.title);
